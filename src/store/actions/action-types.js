@@ -1,5 +1,3 @@
-// These are  constants that  identify the type of action
-
 export const ActionTypes = {
     UPDATE_USER: "UPDATE_USER",
     GET_USER: ' GET_USER',

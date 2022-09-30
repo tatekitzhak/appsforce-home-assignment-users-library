@@ -67,19 +67,21 @@ const UsersList = () => {
                         <tbody>
                             {loading ?
                                 users.slice(pagesVisited, pagesVisited + usersPerPage).filter(val => {
+                                    console.log('val:',val)
                                     if (searchTerm === "") {
                                         return val;
                                     } else if (
-                                        val.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                        val.name.first.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                        val.id.value.toLowerCase().includes(searchTerm.toLowerCase()) ||
                                         val.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                        val.occupation.toLowerCase().includes(searchTerm.toLowerCase())
+                                        val.location.country.toLowerCase().includes(searchTerm.toLowerCase())
                                     ) {
                                         return val;
                                     }
                                 }).map((user) => {
                                     console.log('user::',user)
                                     return (
-                                        <tr key={user.id.value}>
+                                        <tr key={user.id.value+user.location.street.number}>
                                             <td>{user.id.value}</td>
                                             <td>{`${user.name.title} ${user.name.first} ${user.name.last}`}</td>
                                             <td> {user.email}</td>

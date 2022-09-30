@@ -1,9 +1,5 @@
-
-
 import { ActionTypes } from './action-types';
 
-/// payload: the object which is assigned to this property contains the data which are sent
-/// to the store
 export const addUser = (user) => {
     return {
         type: ActionTypes.ADD_USER,

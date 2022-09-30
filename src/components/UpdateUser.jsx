@@ -13,9 +13,7 @@ const UpdateUser = () => {
     const [state, setState] = useState({
         name: '',
         email: '',
-        image: '',
         location: '',
-        id: ''
     });
 
     const { user } = useSelector((state) => state.user);
@@ -30,7 +28,7 @@ const UpdateUser = () => {
         }
     }, [user]);
 
-    const { name, email, location, id } = state;
+    const { name, email, location } = state;
 
     const handleTextChange = e => {
         let { name, value } = e.target;
@@ -84,17 +82,6 @@ const UpdateUser = () => {
                                     required
                                 />
                             </div>
-                            <div className="form-group" >
-                                <label>ID</label>
-                                <textarea
-                                    type="text"
-                                    name="id"
-                                    onChange={handleTextChange}
-                                    value={id || ""}
-                                    className="form-control w-50 p-2"
-                                    required
-                                />
-                            </div>
 
                             <br></br>
 
@@ -104,9 +91,6 @@ const UpdateUser = () => {
                                 <Button id="btn" href='/' className="w-30 p-3 float-right" variant="primary" >
                                     Back
                                 </Button>
-
-
-
                             </div>
 
                         </Card.Body>
