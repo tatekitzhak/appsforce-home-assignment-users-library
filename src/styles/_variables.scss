@@ -1,0 +1,70 @@
+$font-size: 1rem;
+$font-family: 'Inter', sans-serif;
+$background-color: #fff;
+$font-color: #414242;
+$page-width: 100%;
+
+
+  header nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  nav a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 1rem;
+  }
+  .main > div{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    grid-gap: 20px;
+  }
+  .topics {
+    width: max-content;
+  }
+  
+  nav a.active {
+    background-color: #eee;
+  }
+  
+  .subtopic ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .main ul li {
+    margin-right: 1rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard {
+    padding: 1rem 0;
+  }
+  
+  ul.orders {
+    flex-direction: column;
+    border: 1px solid;
+    padding: 0.5rem;
+  }
+  .orders li {
+    padding: 0.5rem 0;
+  }
+  
+  ul.invoices {
+    flex-direction: column;
+    border: 1px solid;
+    padding: 0.5rem;
+  }
+  .invoices li {
+    padding: 0.5rem 0;
+  }
+  
