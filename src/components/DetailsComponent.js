@@ -13,12 +13,12 @@ const ViewDetails = () => {
         name: '',
         email: '',
         occupation: '',
-        bio: ''
-    }
-    );
+        bio: '',
+        image: ''
+    });
     let { id } = useParams();
     const { user } = useSelector((state) => state.user);
-
+    console.log('user:',user)
     useEffect(() => {
         dispatch(getUserAction(id));
     }, []);
@@ -29,7 +29,7 @@ const ViewDetails = () => {
         }
     }, [user]);
 
-    const { name, email, occupation, bio } = state;
+    const { name, email, occupation, bio, image } = state;
 
     return (
         <div className="container" id="update" >
@@ -50,6 +50,9 @@ const ViewDetails = () => {
                             </div>
                             <div className="profile-item">
                                 <h2 className=" p-3 "> <label id="label">Bio </label><br></br> {bio}</h2>
+                            </div>
+                            <div className="profile-item">
+                                <h2 className=" p-3 "> <label id="label">Image </label><br></br> {image}</h2>
                             </div>
                             <Button id="btn" href='/' className="w-30 p-3 float-right" variant="primary" >
                                 Home

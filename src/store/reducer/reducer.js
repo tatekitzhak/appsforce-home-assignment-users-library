@@ -11,7 +11,7 @@ const initialState = {
 
 
 export const userReducers = (state = initialState, action) => {
-
+    console.log('userReducers:',action.payload)
     switch (action.type) {
         case ActionTypes.GET_USERS:
             ///the three dots are ES6 syntax(spraed operator), it allows you to create copy of an abject

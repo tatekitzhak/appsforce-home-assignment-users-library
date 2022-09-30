@@ -32,19 +32,6 @@ export const getUsers = (users) => {
         // payload: users
     }
 }
-/* export function createComment(payload) {
-    return dispatch => {
-        return API.createComment(payload)
-            .then(res => res.json())
-            .then(comment => {
-                dispatch({
-                    type: types.comments.CREATE,
-                    comment
-                });
-            })
-            .catch(err => dispatch(createError(err)));
-    };
-} */
 
 export function getUsersContent() {
     return dispatch => {
@@ -60,15 +47,3 @@ export function getUsersContent() {
             });
     };
 }
-
-/* 
-
-export function getCommentsForPost(postId) {
-    return dispatch => {
-        return API.fetchCommentsForPost(postId)
-            .then(res => res.json())
-            .then(comments => dispatch(updateAvailableComments(comments)))
-            .catch(err => dispatch(createError(err)));
-    };
-}
-*/

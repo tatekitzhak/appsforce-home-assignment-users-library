@@ -7,8 +7,7 @@ import { getUsersAction, deleteUserAction } from '@/store/actions/creators';
 import * as ReactBootstrap from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
 
-import { getUsersContent } from '@/store/actions/getUsersContent';
-///Users/eli/git_repos/react-mui-redux/appsforce-home-assignment-users-library/src/store/actions/getUsersContent.js
+// import { getUsersContent } from '@/store/actions/getUsersContent';
 
 const UsersList = () => {
 
@@ -35,7 +34,7 @@ const UsersList = () => {
 
     useEffect(() => {
         dispatch(getUsersAction(), setLoading(true));
-        dispatch( getUsersContent() );
+        // dispatch( getUsersContent() );
     }, [dispatch]);
 
     return (
@@ -61,9 +60,9 @@ const UsersList = () => {
                         <thead className={"border border-dark bg-dark text-white"}>
                             <tr>
                                 <th>id</th>
-                                <th>Email</th>
                                 <th>Name</th>
-                                <th>Occupation</th>
+                                <th>Email</th>
+                                <th>Location</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -79,23 +78,25 @@ const UsersList = () => {
                                     ) {
                                         return val;
                                     }
-                                }).map((user) =>
-                                    <tr key={user.id}>
-                                        <td>{user.id}</td>
-                                        <td> {user.email}</td>
-                                        <td>{user.name}</td>
-                                        <td>{user.occupation}</td>
-                                        <td>
-                                            <div className="btn-group" role="group" aria-label="Basic example">
-                                                <Link type="button" to={'/update/' + user.id} className="btn btn-info">Edit</Link>
-                                                <Link type="button" to={'/details/' + user.id} className="btn btn-warning">Details</Link>
-                                                <Button type="button" onClick={() => handleDelete(user.id)} className="btn btn-danger">Delete</Button>
+                                }).map((user) => {
+                                    console.log('user::',user)
+                                    return (
+                                        <tr key={user.id.value}>
+                                            <td>{user.id.value}</td>
+                                            <td>{`${user.name.title} ${user.name.first} ${user.name.last}`}</td>
+                                            <td> {user.email}</td>
+                                            <td>{`${user.location.country} ${user.location.city} ${user.location.street.number} ${user.location.street.name}`}</td>
+                                            <td>
+                                                <div className="btn-group" role="group" aria-label="Basic example">
+                                                    <Link type="button" to={'/update/' + user.id.value} className="btn btn-info">Edit</Link>
+                                                    <Link type="button" to={'/details/' + user.id.value} className="btn btn-warning">Details</Link>
+                                                    <Button type="button" onClick={() => handleDelete(user.id.value)} className="btn btn-danger">Delete</Button>
 
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                ) :
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    )
+                                }) :
                                 <ReactBootstrap.Spinner animation="border" variant="primary" />
                             }
 

@@ -11,6 +11,7 @@ export const addUser = (user) => {
     }
 }
 export const getUsers = (users) => {
+    console.log('getUsers:',users)
     return {
         type: ActionTypes.GET_USERS,
         payload: users
