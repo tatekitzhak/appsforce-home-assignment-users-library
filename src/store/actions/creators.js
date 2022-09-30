@@ -24,14 +24,14 @@ export const addUserAction = (user) => {
 /// fetch data of a single user  basedin id
 export const getUserAction = (id) => {
     return (dispatch) => {
-        axios.get(`https://ti-react-test.herokuapp.com/users/${id}`)
+        axios.get(`https://ti-react-test.herokuapp.com/users/274`)
             .then(response => {
                 console.log('getUserAction:', response);
                 dispatch(getUser(response.data)
                 );
             })
             .catch(error => {
-                console.log(error);
+                console.log('error in getUserAction:',error);
             });
     }
 }

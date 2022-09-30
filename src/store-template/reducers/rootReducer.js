@@ -1,10 +1,10 @@
 import {createStore, combineReducers } from "redux";
 
-import counter from '@/store/reducers/counter';
-import { topics } from '@/store/reducers/topics';
-import { subtopics } from '@/store/reducers/subtopics'; 
-import { articles } from '@/store/reducers/articles';
-import { content } from '@/store/reducers/content';
+import counter from '@/store-template/reducers/counter';
+import { topics } from '@/store-template/reducers/topics';
+import { subtopics } from '@/store-template/reducers/subtopics'; 
+import { articles } from '@/store-template/reducers/articles';
+import { content } from '@/store-template/reducers/content';
 console.log('combineReducers:',combineReducers)
 const rootReducer = combineReducers({
     topics,

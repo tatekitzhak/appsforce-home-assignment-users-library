@@ -4,32 +4,32 @@ import { getUserAction } from '@/store/actions/creators';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-const ViewDetails = () => {
+const ViewDetails = (props) => {
 
     let dispatch = useDispatch();
 
 
-    const [state, setState] = useState({
+    const [userDetails, setUserDetails] = useState({
         name: '',
         email: '',
-        occupation: '',
-        bio: '',
-        image: ''
+        image: '',
+        location: '',
+        id: ''
     });
-    let { id } = useParams();
+    let { useParams_id } = useParams();
     const { user } = useSelector((state) => state.user);
-    console.log('user:',user)
+    console.log('ViewDetails user:',user,props)
     useEffect(() => {
-        dispatch(getUserAction(id));
+        // dispatch(getUserAction(id));
     }, []);
 
     useEffect(() => {
         if (user) {
-            setState({ ...user });
+            setUserDetails({ ...user });
         }
     }, [user]);
 
-    const { name, email, occupation, bio, image } = state;
+    const { name, email, image, location, id } = userDetails;
 
     return (
         <div className="container" id="update" >
@@ -40,20 +40,21 @@ const ViewDetails = () => {
                     <Card.Body id="body" >
                         <div className="container">
                             <div className="profile-item">
-                                <h3><label id="label">Name :</label> {name}</h3>
+                                <h2 className=" p-3 "> <label id="label">Image </label><br></br> {image}</h2>
+                            </div>
+                            <div className="profile-item">
+                                <h3><label id="label">Full Name :</label> {name}</h3>
                             </div>
                             <div className="profile-item">
                                 <h3> <label id="label">Email :</label> {email}</h3>
                             </div>
                             <div className="profile-item">
-                                <h3> <label id="label">Occupation :</label> {occupation}</h3>
+                                <h3> <label id="label">location :</label> {location}</h3>
                             </div>
                             <div className="profile-item">
-                                <h2 className=" p-3 "> <label id="label">Bio </label><br></br> {bio}</h2>
+                                <h2 className=" p-3 "> <label id="label">id: </label><br></br> {id}</h2>
                             </div>
-                            <div className="profile-item">
-                                <h2 className=" p-3 "> <label id="label">Image </label><br></br> {image}</h2>
-                            </div>
+                            
                             <Button id="btn" href='/' className="w-30 p-3 float-right" variant="primary" >
                                 Home
                             </Button>

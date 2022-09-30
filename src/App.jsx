@@ -1,5 +1,5 @@
 import React from 'react';
-import UserListing from './components/CustomerList.';
+import UserListing from './components/CustomerList';
 import UpdateDetails from './components/UpdateUser';
 import ViewDetails from './components/DetailsComponent';
 import AddUser from './components/AddUserComponent';

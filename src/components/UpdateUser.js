@@ -8,20 +8,20 @@ import { useHistory, useParams } from 'react-router-dom';
 const UpdateUser = () => {
     let dispatch = useDispatch();
     let history = useHistory();
-    let { id } = useParams();
+    let { useParamsId } = useParams();
 
     const [state, setState] = useState({
         name: '',
         email: '',
-        occupation: '',
-        bio: ''
-    }
-    );
+        image: '',
+        location: '',
+        id: ''
+    });
 
     const { user } = useSelector((state) => state.user);
-
+    console.log('p',user, useParamsId)
     useEffect(() => {
-        dispatch(getUserAction(id));
+        dispatch(getUserAction(useParamsId));
     }, []);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ const UpdateUser = () => {
         }
     }, [user]);
 
-    const { name, email, occupation, bio } = state;
+    const { name, email, location, id } = state;
 
     const handleTextChange = e => {
         let { name, value } = e.target;
@@ -40,7 +40,7 @@ const UpdateUser = () => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        dispatch(updateUserAction(state, id));
+        dispatch(updateUserAction(state, useParamsId));
         history.push("/");
 
     }
@@ -74,23 +74,23 @@ const UpdateUser = () => {
                                 />
                             </div>
                             <div className="form-group" >
-                                <label>Occupation</label>
+                                <label>Location</label>
                                 <input
                                     type="text"
-                                    name="occupation"
+                                    name="location"
                                     onChange={handleTextChange}
-                                    value={occupation || ""}
+                                    value={location || ""}
                                     className="form-control w-50 p-2"
                                     required
                                 />
                             </div>
                             <div className="form-group" >
-                                <label>Bio</label>
+                                <label>ID</label>
                                 <textarea
                                     type="text"
-                                    name="bio"
+                                    name="id"
                                     onChange={handleTextChange}
-                                    value={bio || ""}
+                                    value={id || ""}
                                     className="form-control w-50 p-2"
                                     required
                                 />

@@ -1,5 +1,5 @@
 import axios from "axios";
-import * as types from '@/store/constants/types';
+import * as types from '@/store-template/constants/types';
 /* 
 import * as types from '../constants/types';
 import * as API from '../shared/http';

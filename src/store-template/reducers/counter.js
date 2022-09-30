@@ -1,5 +1,5 @@
-import { ACTION_INCREMENT, ACTION_DECREMENT } from "@/store/constants/types";
-import initialState from '@/store/constants/initialState';
+import { ACTION_INCREMENT, ACTION_DECREMENT } from "@/store-template/constants/types";
+import initialState from '@/store-template/constants/initialState';
 
 
 // const initialState = {

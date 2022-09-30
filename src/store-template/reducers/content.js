@@ -1,5 +1,5 @@
-import { contentState } from '@/store/constants/initialState';
-import * as types from '@/store/constants/types';
+import { contentState } from '@/store-template/constants/initialState';
+import * as types from '@/store-template/constants/types';
 
 export function content(state = contentState.content, action) {
     console.log('content(state, action):', state, action);

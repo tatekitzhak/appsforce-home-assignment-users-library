@@ -1,5 +1,5 @@
-import initialState from '@/store/constants/initialState';
-import * as types from '@/store/constants/types';
+import initialState from '@/store-template/constants/initialState';
+import * as types from '@/store-template/constants/types';
 
 export function topics(state = initialState.topics, action) {
     console.log('topics(state, action):', state, action);

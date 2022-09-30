@@ -1,5 +1,5 @@
-import { subtopicsState } from '@/store/constants/initialState';
-import * as types from '@/store/constants/types';
+import { subtopicsState } from '@/store-template/constants/initialState';
+import * as types from '@/store-template/constants/types';
 
 export function subtopics(state = subtopicsState.subtopics, action) {
     console.log('subtopics(state, action):', state, action);

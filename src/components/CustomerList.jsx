@@ -7,8 +7,6 @@ import { getUsersAction, deleteUserAction } from '@/store/actions/creators';
 import * as ReactBootstrap from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
 
-// import { getUsersContent } from '@/store/actions/getUsersContent';
-
 const UsersList = () => {
 
     let dispatch = useDispatch();
@@ -89,7 +87,7 @@ const UsersList = () => {
                                             <td>
                                                 <div className="btn-group" role="group" aria-label="Basic example">
                                                     <Link type="button" to={'/update/' + user.id.value} className="btn btn-info">Edit</Link>
-                                                    <Link type="button" to={'/details/' + user.id.value} className="btn btn-warning">Details</Link>
+                                                    <Link type="button" to={'/details/' + `${user.name.title}-${user.name.first}-${user.name.last}`} user={user} className="btn btn-warning">Details</Link>
                                                     <Button type="button" onClick={() => handleDelete(user.id.value)} className="btn btn-danger">Delete</Button>
 
                                                 </div>
