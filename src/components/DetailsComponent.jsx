@@ -16,11 +16,11 @@ const ViewDetails = (props) => {
         location: '',
         id: ''
     });
-    let { useParams_id } = useParams();
+    let userID = useParams();
     const { user } = useSelector((state) => state.user);
-    console.log('ViewDetails user:',user,props)
+    console.log('ViewDetails user:',user,userID)
     useEffect(() => {
-        // dispatch(getUserAction(id));
+        // dispatch(getUserAction(userID));
     }, []);
 
     useEffect(() => {

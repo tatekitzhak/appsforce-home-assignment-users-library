@@ -5,7 +5,7 @@ import { addUser, getUser, getUsers, deleteUser, updateUser } from './actions';
 export const addUserAction = (user) => {
     return (dispatch) => {
         /// return data and manipulate the data .
-        axios.post('https://ti-react-test.herokuapp.com/users', user)
+        axios.post('https://randomuser.me/api/?results=10', user)
             .then(response => {
                 console.log('addUserAction:', response);
                 dispatch(addUser(response.data))
@@ -19,7 +19,7 @@ export const addUserAction = (user) => {
 /// fetch data of a single user  basedin id
 export const getUserAction = (id) => {
     return (dispatch) => {
-        axios.get(`https://ti-react-test.herokuapp.com/users/274`)
+        axios.get(`https://randomuser.me/api/?results=10`)
             .then(response => {
                 console.log('getUserAction:', response);
                 dispatch(getUser(response.data)
@@ -35,7 +35,11 @@ export const getUserAction = (id) => {
 export const getUsersAction = () => {
     return (dispatch) => {
         axios.get('https://randomuser.me/api/?results=10')
-            .then(response => {                
+            .then(response => {    
+                for(let i=0; i<localStorage.length; i++) {
+                    let key = localStorage.key(i);
+                    console.log('localStorage:', JSON.parse(JSON.parse(localStorage.getItem(key)).user ) );
+                  }         
                 const allUsers = []
                 for (let i = 0; i < response.data.results.length; i++) {
                     const personDetails = {}
@@ -80,7 +84,7 @@ export const getUsersAction = () => {
 /// delete a user
 export const deleteUserAction = (id) => {
     return (dispatch) => {
-        axios.delete(`https://ti-react-test.herokuapp.com/users/${id}`)
+        axios.delete(`https://randomuser.me/api/?results=10`)
             .then(response => {
                 console.log('deleteUserAction:', response);
                 dispatch(deleteUser());
@@ -95,7 +99,7 @@ export const deleteUserAction = (id) => {
 /// update the existing data of a user
 export const updateUserAction = (user, id) => {
     return (dispatch) => {
-        axios.put(`https://ti-react-test.herokuapp.com/users/${id}`, user)
+        axios.put(`https://randomuser.me/api/?results=10`, user)
             .then(response => {
                 console.log('updateUserAction:', response);
                 dispatch(updateUser());

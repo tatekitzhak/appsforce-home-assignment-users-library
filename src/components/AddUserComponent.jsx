@@ -24,8 +24,8 @@ class AddUser extends Component {
         this.setState({
             name: '',
             email: '',
-            occupation: '',
-            bio: ''
+            location: '',
+            id: ''
         });
     }
 
@@ -45,7 +45,7 @@ class AddUser extends Component {
                                         onChange={this.handleTextChange}
                                         value={this.state.name}
                                         className="form-control w-50 p-2"
-                                        required
+                                    
                                     />
                                 </div>
                                 <div className="form-group" >
@@ -55,27 +55,26 @@ class AddUser extends Component {
                                         onChange={this.handleTextChange}
                                         value={this.state.email}
                                         className="form-control w-50 p-2"
-                                        required
                                     />
                                 </div>
                                 <div className="form-group" >
-                                    <label>Occupation</label>
+                                    <label>location</label>
                                     <input
-                                        type="text" name="occupation"
+                                        type="text" name="location"
                                         onChange={this.handleTextChange}
-                                        value={this.state.occupation}
+                                        value={this.state.location}
                                         className="form-control w-50 p-2"
-                                        required
+                                        
                                     />
                                 </div>
                                 <div className="form-group" >
-                                    <label>Bio</label>
+                                    <label>ID</label>
                                     <input
-                                        type="text" name="bio"
+                                        type="text" name="id"
                                         onChange={this.handleTextChange}
-                                        value={this.state.bio}
+                                        value={this.state.id}
                                         className="form-control w-50 p-2"
-                                        required
+                                        
                                     />
                                 </div>
 

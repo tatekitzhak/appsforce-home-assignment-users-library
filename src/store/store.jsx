@@ -22,10 +22,10 @@ const userPersistConfig = {
 
 const rootPersistConfig = {
     key: 'root',
-    storage: storage,
+    storage,
     //storage:storageSession,
     // blacklist: ['apiProductSlice'],
-    whitelist: ['users'],
+    whitelist: ['user'],
     /* debug: true,
    whitelist: ['activity', 'user'] */
 }

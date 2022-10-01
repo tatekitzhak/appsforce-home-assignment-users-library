@@ -57,7 +57,7 @@ const UpdateUser = () => {
                                     onChange={handleTextChange}
                                     value={name || ""}
                                     className="form-control w-50 p-2"
-                                    required
+                                    
                                 />
                             </div>
                             <div className="form-group" >
@@ -68,7 +68,7 @@ const UpdateUser = () => {
                                     onChange={handleTextChange}
                                     value={email || ""}
                                     className="form-control w-50 p-2"
-                                    required
+                                    
                                 />
                             </div>
                             <div className="form-group" >
@@ -79,7 +79,7 @@ const UpdateUser = () => {
                                     onChange={handleTextChange}
                                     value={location || ""}
                                     className="form-control w-50 p-2"
-                                    required
+                                    
                                 />
                             </div>
 
